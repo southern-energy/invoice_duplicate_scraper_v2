@@ -19,7 +19,7 @@ import numpy as np
 
 # The current_sheet variable needs to be named the sheet you want to check for Duplicate (Service Types &Addresses) OR duplicate (ServiceIDs).
 
-current_sheet = 'C:/Users/SEM/Documents/Invoicing/10-5-20.xlsx'
+current_sheet = 'C:/Users/SEM/Documents/Invoicing/10-7-20.xlsx'
 
 large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2020 Inspections Billing.xlsx'
 
@@ -109,7 +109,7 @@ df_master_ServiceID.fillna(0, inplace = True)
 
 df_current_sheet_ServiceID = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[7], skiprows=0), sort=False, ignore_index=False)
 
-df_master_serviceID = df_master_ServiceID.astype(int)
+#df_master_serviceID = df_master_ServiceID.astype(int)
 
 # Master Sheet
 
@@ -125,11 +125,11 @@ ser_aggRows_current_sheet_ServiceID = pd.Series(df_current_sheet_ServiceID.value
 # Master Sheet
 first_set_ServiceID = set(map(tuple, ser_aggRows_master_ServiceID))
 
-# print(first_set_ServiceID)
+print(first_set_ServiceID)
 
 secnd_set_ServiceID = set(map(tuple, ser_aggRows_current_sheet_ServiceID))
 
-# print(secnd_set_ServiceID)
+print(secnd_set_ServiceID)
 
 second_set_storage_ServiceID = (map(tuple, ser_aggRows_current_sheet_ServiceID))
 
