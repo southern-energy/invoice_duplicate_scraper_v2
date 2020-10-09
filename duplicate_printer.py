@@ -31,7 +31,7 @@ large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/20
 
 # Find Master Sheet
 
-workbook = xlrd.open_workbook(large_sheet)
+#workbook = xlrd.open_workbook(large_sheet)
 pd.read_excel(large_sheet)
 
 
@@ -41,13 +41,13 @@ pd.read_excel(large_sheet)
 # Find All of the Sheets in the Workbook
 # Combine all sheets of Master Sheet into a single list of lists.
 
-df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0), sort=False, ignore_index=False)
+df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # print(df_master_Street_Address_And_Service)
 
 # Read all of the sheets, using just the columns that have Street Address and the Service.
 
-df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 10], skiprows=0), sort=False, ignore_index=False)
+df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # print(df_current_sheet_Street_Address_And_Service)
 
@@ -101,13 +101,13 @@ else:
 
 # Master Sheet
 
-df_master_ServiceID = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[7], skiprows=0), sort=False, ignore_index=False, join="outer")
+df_master_ServiceID = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False, join="outer")
 
 df_master_ServiceID.fillna(0, inplace = True)
 
 # Current Sheet
 
-df_current_sheet_ServiceID = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[7], skiprows=0), sort=False, ignore_index=False)
+df_current_sheet_ServiceID = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False)
 
 #df_master_serviceID = df_master_ServiceID.astype(int)
 
@@ -125,11 +125,11 @@ ser_aggRows_current_sheet_ServiceID = pd.Series(df_current_sheet_ServiceID.value
 # Master Sheet
 first_set_ServiceID = set(map(tuple, ser_aggRows_master_ServiceID))
 
-print(first_set_ServiceID)
+#print(first_set_ServiceID)
 
 secnd_set_ServiceID = set(map(tuple, ser_aggRows_current_sheet_ServiceID))
 
-print(secnd_set_ServiceID)
+#print(secnd_set_ServiceID)
 
 second_set_storage_ServiceID = (map(tuple, ser_aggRows_current_sheet_ServiceID))
 
