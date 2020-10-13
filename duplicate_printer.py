@@ -1,4 +1,4 @@
-# # Started by Gregory Power at 11/06/19 @ 4:27 PM
+# Started by Gregory Power at 11/06/19 @ 4:27 PM
 # # Basic Functionality Achieved on 11/12/19
 # # Able to Print Indexes on 11/19/19
 # # Able to Search for ServiceID or Address + ServiceType Duplicates on 12/11/19 at 4:42 PM
@@ -19,7 +19,7 @@ import numpy as np
 
 # The current_sheet variable needs to be named the sheet you want to check for Duplicate (Service Types &Addresses) OR duplicate (ServiceIDs).
 
-current_sheet = 'C:/Users/SEM/Documents/Invoicing/10-5-20.xlsx'
+current_sheet = 'C:/Users/SEM/Documents/Invoicing/10-7-20.xlsx'
 
 large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2020 Inspections Billing.xlsx'
 
@@ -31,7 +31,7 @@ large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/20
 
 # Find Master Sheet
 
-workbook = xlrd.open_workbook(large_sheet)
+#workbook = xlrd.open_workbook(large_sheet)
 pd.read_excel(large_sheet)
 
 
@@ -41,13 +41,13 @@ pd.read_excel(large_sheet)
 # Find All of the Sheets in the Workbook
 # Combine all sheets of Master Sheet into a single list of lists.
 
-df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0), sort=False, ignore_index=False)
+df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # print(df_master_Street_Address_And_Service)
 
 # Read all of the sheets, using just the columns that have Street Address and the Service.
 
-df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 10], skiprows=0), sort=False, ignore_index=False)
+df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # print(df_current_sheet_Street_Address_And_Service)
 
@@ -101,15 +101,15 @@ else:
 
 # Master Sheet
 
-df_master_ServiceID = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[7], skiprows=0), sort=False, ignore_index=False, join="outer")
+df_master_ServiceID = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False, join="outer")
 
 df_master_ServiceID.fillna(0, inplace = True)
 
 # Current Sheet
 
-df_current_sheet_ServiceID = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[7], skiprows=0), sort=False, ignore_index=False)
+df_current_sheet_ServiceID = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False)
 
-df_master_serviceID = df_master_ServiceID.astype(int)
+#df_master_serviceID = df_master_ServiceID.astype(int)
 
 # Master Sheet
 
@@ -125,11 +125,11 @@ ser_aggRows_current_sheet_ServiceID = pd.Series(df_current_sheet_ServiceID.value
 # Master Sheet
 first_set_ServiceID = set(map(tuple, ser_aggRows_master_ServiceID))
 
-# print(first_set_ServiceID)
+#print(first_set_ServiceID)
 
 secnd_set_ServiceID = set(map(tuple, ser_aggRows_current_sheet_ServiceID))
 
-# print(secnd_set_ServiceID)
+#print(secnd_set_ServiceID)
 
 second_set_storage_ServiceID = (map(tuple, ser_aggRows_current_sheet_ServiceID))
 
