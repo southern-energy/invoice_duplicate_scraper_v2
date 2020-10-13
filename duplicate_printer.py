@@ -1,4 +1,4 @@
-# # Started by Gregory Power at 11/06/19 @ 4:27 PM
+# Started by Gregory Power at 11/06/19 @ 4:27 PM
 # # Basic Functionality Achieved on 11/12/19
 # # Able to Print Indexes on 11/19/19
 # # Able to Search for ServiceID or Address + ServiceType Duplicates on 12/11/19 at 4:42 PM
@@ -89,7 +89,7 @@ k = 0
 Excel_Indexes = []
 while k < len(duplicates_list):
     # print(secnd_set_list.index(duplicates_list[k]))
-    Excel_Indexes.append(int(2) + int(secnd_set_list.index(duplicates_list[k])))
+    Excel_Indexes.append(int(1) + int(secnd_set_list.index(duplicates_list[k])))
     k += 1
 else:
     Excel_Indexes.sort()
@@ -149,7 +149,7 @@ q = 0
 Excel_Indexes_for_ServiceID_Duplicates = []
 while q < len(duplicates_list_ServiceID_Duplicates):
     # print(secnd_set_list_Address_Service_Duplicates.index(duplicates_list_ServiceID_Duplicates[q]))
-    Excel_Indexes_for_ServiceID_Duplicates.append(int(2) + int(secnd_set_list_ServiceID_Duplicates.index(duplicates_list_ServiceID_Duplicates[q])))
+    Excel_Indexes_for_ServiceID_Duplicates.append(int(1) + int(secnd_set_list_ServiceID_Duplicates.index(duplicates_list_ServiceID_Duplicates[q])))
     q += 1
 else:
     Excel_Indexes_for_ServiceID_Duplicates.sort()
