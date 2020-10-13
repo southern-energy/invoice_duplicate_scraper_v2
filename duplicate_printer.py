@@ -89,7 +89,7 @@ k = 0
 Excel_Indexes = []
 while k < len(duplicates_list):
     # print(secnd_set_list.index(duplicates_list[k]))
-    Excel_Indexes.append(int(2) + int(secnd_set_list.index(duplicates_list[k])))
+    Excel_Indexes.append(int(1) + int(secnd_set_list.index(duplicates_list[k])))
     k += 1
 else:
     Excel_Indexes.sort()
@@ -149,7 +149,7 @@ q = 0
 Excel_Indexes_for_ServiceID_Duplicates = []
 while q < len(duplicates_list_ServiceID_Duplicates):
     # print(secnd_set_list_Address_Service_Duplicates.index(duplicates_list_ServiceID_Duplicates[q]))
-    Excel_Indexes_for_ServiceID_Duplicates.append(int(2) + int(secnd_set_list_ServiceID_Duplicates.index(duplicates_list_ServiceID_Duplicates[q])))
+    Excel_Indexes_for_ServiceID_Duplicates.append(int(1) + int(secnd_set_list_ServiceID_Duplicates.index(duplicates_list_ServiceID_Duplicates[q])))
     q += 1
 else:
     Excel_Indexes_for_ServiceID_Duplicates.sort()
