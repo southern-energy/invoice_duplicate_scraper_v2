@@ -23,6 +23,8 @@ current_sheet = 'C:/Users/SEM/Documents/Invoicing/1-7-21.xlsx'
 
 large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2020 Inspections Billing.xlsx'
 
+large_sheet_2 = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2021 Inspections Billing.xlsx'
+
 # =======================================================
 # =======================================================
 # =======================================================
@@ -33,7 +35,7 @@ large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/20
 
 #workbook = xlrd.open_workbook(large_sheet)
 pd.read_excel(large_sheet)
-
+pd.read_excel(large_sheet_2)
 
 # Start of Address + Service Type Duplicate Section
 
@@ -42,6 +44,12 @@ pd.read_excel(large_sheet)
 # Combine all sheets of Master Sheet into a single list of lists.
 
 df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
+
+df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
+
+# This should combine the two dataframes on top of each other and should then run as normal.
+
+df_master_Street_Address_And_Service = pd.concat([df_master_Street_Address_And_Service,df_master_Street_Address_And_Service_2], axis=0)
 
 # print(df_master_Street_Address_And_Service)
 
@@ -103,7 +111,13 @@ else:
 
 df_master_ServiceID = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False, join="outer")
 
+df_master_ServiceID_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[7], skiprows=0,header=None), sort=False, ignore_index=False, join="outer")
+
 df_master_ServiceID.fillna(0, inplace = True)
+
+df_master_ServiceID_2.fillna(0, inplace = True)
+
+df_master_Street_Address_And_Service = pd.concat([df_master_ServiceID,df_master_ServiceID_2], axis=0)
 
 # Current Sheet
 
