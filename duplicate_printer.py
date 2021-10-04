@@ -19,7 +19,7 @@ import numpy as np
 
 # The current_sheet variable needs to be named the sheet you want to check for Duplicate (Service Types &Addresses) OR duplicate (ServiceIDs).
 
-current_sheet = 'C:/Users/SEM/Documents/Invoicing/9-29-21.xlsx'
+current_sheet = 'C:/Users/SEM/Documents/Invoicing/10-1-21.xlsx'
 
 large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2021 Inspections Billing.xlsx'
 
@@ -44,6 +44,8 @@ pd.read_excel(large_sheet)
 # Combine all sheets of Master Sheet into a single list of lists.
 
 df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
+
+#TODO:  Uncomment line 50 & 54 when we get to post new year.
 
 # df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
 
@@ -117,7 +119,11 @@ df_master_ServiceID.fillna(0, inplace = True)
 
 # df_master_ServiceID_2.fillna(0, inplace = True)
 
-df_master_Street_Address_And_Service = pd.concat([df_master_ServiceID,"""df_master_ServiceID_2"""], axis=0)
+#TODO: Uncomment Line 124 and comment out line 126 when new year comes around.
+
+# df_master_Street_Address_And_Service = pd.concat([df_master_ServiceID,df_master_ServiceID_2], axis=0)
+
+df_master_Street_Address_And_Service = pd.concat([df_master_ServiceID], axis=0)
 
 # Current Sheet
 
