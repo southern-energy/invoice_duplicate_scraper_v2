@@ -43,9 +43,9 @@ pd.read_excel(large_sheet_2)
 # Find All of the Sheets in the Workbook
 # Combine all sheets of Master Sheet into a single list of lists.
 
-df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
+df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
 
-df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
+df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # This should combine the two dataframes on top of each other and should then run as normal.
 
@@ -55,7 +55,7 @@ df_master_Street_Address_And_Service = pd.concat([df_master_Street_Address_And_S
 
 # Read all of the sheets, using just the columns that have Street Address and the Service.
 
-df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 10], skiprows=0,header=None), sort=False, ignore_index=False)
+df_current_sheet_Street_Address_And_Service = pd.concat(pd.read_excel(current_sheet, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # print(df_current_sheet_Street_Address_And_Service)
 
