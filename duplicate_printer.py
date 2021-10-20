@@ -2,7 +2,6 @@
 # # Basic Functionality Achieved on 11/12/19
 # # Able to Print Indexes on 11/19/19
 # # Able to Search for ServiceID or Address + ServiceType Duplicates on 12/11/19 at 4:42 PM
-# For Environment, use Python 3.6.0
 # Working Tree Change
 
 # We need to find duplicates that exist, there is one in the master sheet at the bottom of the most recent sheet.
