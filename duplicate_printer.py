@@ -18,11 +18,11 @@ import numpy as np
 
 # The current_sheet variable needs to be named the sheet you want to check for Duplicate (Service Types &Addresses) OR duplicate (ServiceIDs).
 
-current_sheet = 'C:/Users/april/Documents/Invoicing/4-19-23.xlsx'
+current_sheet = 'C:/Users/april/Documents/Invoicing/4-20-23.xlsx'
 
 large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2023 Inspections Billing.xlsx'
 
-large_sheet_2 = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2022 Inspections Billing.xlsx'
+# large_sheet_2 = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2022 Inspections Billing.xlsx'
 
 # =======================================================
 # =======================================================
@@ -46,11 +46,11 @@ df_master_Street_Address_And_Service = pd.concat(pd.read_excel(large_sheet, shee
 
 #TODO:  Uncomment line 50 & 54 when we get to post new year.
 
-df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
+# df_master_Street_Address_And_Service_2 = pd.concat(pd.read_excel(large_sheet_2, sheet_name=None, usecols=[1, 11], skiprows=0,header=None), sort=False, ignore_index=False)
 
 # This should combine the two dataframes on top of each other and should then run as normal.
 
-df_master_Street_Address_And_Service = pd.concat([df_master_Street_Address_And_Service,df_master_Street_Address_And_Service_2], axis=0)
+# df_master_Street_Address_And_Service = pd.concat([df_master_Street_Address_And_Service,df_master_Street_Address_And_Service_2], axis=0)
 
 print(df_master_Street_Address_And_Service)
 
