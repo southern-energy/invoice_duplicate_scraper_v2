@@ -20,9 +20,9 @@ import numpy as np
 
 current_sheet = 'C:/Users/april/Documents/Invoicing/1-2-24.xlsx'
 
-large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2023 Inspections Billing.xlsx'
+large_sheet = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2024 Inspections Billing.xlsx'
 
-# large_sheet_2 = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2022 Inspections Billing.xlsx'
+large_sheet_2 = 'S:/SEM/Building Science Team/Accounting/Invoicing Spreadsheets/2023 Inspections Billing.xlsx'
 
 # =======================================================
 # =======================================================
